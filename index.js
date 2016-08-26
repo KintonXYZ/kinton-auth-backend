@@ -5,8 +5,6 @@ const consts = require('./src/consts');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-// const Fleet = require('./src/models/fleet');
-
 // Express
 const app = express();
 app.use(bodyParser.urlencoded());
@@ -26,18 +24,7 @@ const router = new Router(app, logger);
 
 mongoose.connection.on('connected', () => {
   router.listen(consts.PORT);
-
-  // const newFleet = Fleet({
-  //   _id: 'starlord55',
-  // });
-  //
-  // // save the user
-  // newFleet.save((err) => {
-  //   if (err) throw err;
-  //
-  //   console.log('User created!');
-  // });
 });
 
 // Database connection
-mongoose.connect('mongodb://mqtt.kinton.xyz/test');
+mongoose.connect(`mongodb://${consts.MONGO_HOST}/test`);
