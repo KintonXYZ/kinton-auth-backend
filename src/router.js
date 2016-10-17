@@ -55,7 +55,8 @@ module.exports = class Router {
   }
 
   listen(port) {
-    this.logger.info(`Listening on port: ${port}`);
-    this.app.listen(port);
+    this.app.listen(port, () => {
+      this.logger.info(`Listening on port: ${port}`);
+    });
   }
 };

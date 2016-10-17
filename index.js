@@ -23,8 +23,9 @@ const logger = new (winston.Logger)({
 const router = new Router(app, logger);
 
 mongoose.connection.on('connected', () => {
-  router.listen(consts.PORT);
+  logger.debug('Connected to mongodb');
 });
 
 // Database connection
 mongoose.connect(`mongodb://${consts.MONGO_HOST}/test`);
+router.listen(consts.PORT);
