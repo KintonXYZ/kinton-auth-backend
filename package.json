@@ -1,24 +1,33 @@
 {
-  "name": "kinton-rabbitmq-auth",
-  "version": "0.0.0",
+  "name": "kinton-auth-backend",
+  "version": "0.1.0",
   "description": "RabbitMQ auth server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "app": "node dist/src/app.js",
+    "test": "node_modules/.bin/gulp test",
+    "build": "node_modules/.bin/gulp build",
+    "docs": "node_modules/.bin/spectacle swagger.yaml -t docs"
   },
   "author": "Diego Fernández Barrera",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "express-winston": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.4",
+    "joi": "^10.2.2",
     "mongoose": "^4.5.10",
+    "typescript": "^2.1.6",
     "winston": "^2.2.0"
   },
   "devDependencies": {
-    "eslint": "^3.3.1",
-    "eslint-config-airbnb": "^10.0.1",
-    "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^2.1.0",
-    "eslint-plugin-react": "^6.1.2"
+    "@types/body-parser": "0.0.33",
+    "@types/mocha": "^2.2.39",
+    "@types/mongoose": "^4.7.5",
+    "@types/node": "^7.0.5",
+    "errorhandler": "^1.5.0",
+    "gulp-mocha": "^3.0.1"
   }
 }
